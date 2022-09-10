@@ -9,11 +9,10 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class BlogComponent implements OnInit {
 
-  constructor(public cv: CvabastidasService,
-              private sanitizer: DomSanitizer
-              ) { }
+  constructor(public cv: CvabastidasService, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
+
   }
 
   getVideoIframe(url) {
