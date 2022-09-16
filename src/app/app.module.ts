@@ -14,11 +14,11 @@ import { ContactoComponent } from './contacto/contacto.component';
     ResumenComponent,
     PortafolioComponent,
     BlogComponent,
-    ContactoComponent
+    ContactoComponent,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

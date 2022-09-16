@@ -14,11 +14,11 @@
       </div>
       <div class="block-content">
           <h3 class="block-title">Profesional</h3>
-          <div *ngFor="let profex of cv.profesional">
-            <label class="progress-bar-label">{{ profex.nombre }}</label>
+          <div *ngFor="let elem of cv.profesional">
+            <label class="progress-bar-label">{{ elem.Nombre }}</label>
             <div class="progress">
-                <div [style.width.%]=profex.valor class="progress-bar" role="progressbar" attr.aria-valuenow="{{ profex.valor }}" aria-valuemin="0" aria-valuemax="100">
-                    <span>{{ profex.valor }}%</span>
+                <div [style.width.%]=elem.Valor class="progress-bar" role="progressbar" attr.aria-valuenow="{{ elem.Valor }}" aria-valuemin="0" aria-valuemax="100">
+                    <span>{{ elem.Valor }}%</span>
                 </div>
             </div>
         </div>
@@ -32,10 +32,10 @@
                           <div *ngFor="let expex of cv.experiencia">
                             <div class="exp">
                                 <div class="hgroup">
-                                    <h4><span>{{ expex.Empresa }}</span> - {{ expex.Cargo }}</h4>
-                                    <h5> {{ expex.Fecha }} </h5>
-                                </div>
-                                <p>{{ expex.Descripcion }}</p>
+                                    <h4><span>{{ expex.Empresa }}</span> </h4>
+                                    <h5> {{ expex.FechaInit }} - {{ expex.FechaFin }}</h5>
+                                </div><br>
+                                <p >{{expex.Descripcion}}</p>
                             </div>
                         </div>
                       </div>
@@ -49,13 +49,13 @@
               <div class="row">
                   <div class="col-md-12">
                       <div class="exp-holder">
-                        <div *ngFor="let edux of cv.educacion">
+                        <div *ngFor="let elem of cv.informacion">
                           <div class="exp">
                               <div class="hgroup">
-                                  <h4>{{ edux.Nombre }} | <a href="{{ edux.Url }}" target="_blank"><span>Ver Certificado</span></a></h4>
-                                  <h5>{{ edux.Fecha }}</h5>
+                                  <h4>{{ elem.year }} | <b> {{ elem.Titulo }}</b></h4>
+                                  <h5></h5>
                               </div>
-                              <p>{{ edux.Descripcion }}</p>
+                              <!-- <p>{{ edux.Descripcion }}</p> -->
                           </div>
                         </div>
                       </div>
@@ -64,88 +64,20 @@
           </div>
       </div>
       <div class="block-content">
-          <h3 class="block-title">Servicios</h3>
-          <div class="row">
-              <div class="col-md-4 col-sm-6 service">
-                  <div class="service-icon">
-                      <i class="ion-laptop"></i>
-                  </div>
-                  <h4>Diseño Web</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-              </div>
-              <div class="col-md-4 col-sm-6 service">
-                  <div class="service-icon">
-                      <i class="ion-pie-graph"></i>
-                  </div>
-                  <h4>Desarrollo de Aplicaciones</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-              </div>
-              <div class="col-md-4 col-sm-6 service">
-                  <div class="service-icon">
-                      <i class="ion-paintbucket"></i>
-                  </div>
-                  <h4>Diseño Grafico</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-              </div>
-              <div class="col-md-4 col-sm-6 service">
-                  <div class="service-icon">
-                      <i class="ion-printer"></i>
-                  </div>
-                  <h4>Print Design</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-              </div>
-              <div class="col-md-4 col-sm-6 service">
-                  <div class="service-icon">
-                      <i class="ion-qr-scanner"></i>
-                  </div>
-                  <h4>Graphic Design</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-              </div>
-              <div class="col-md-4 col-sm-6 service">
-                  <div class="service-icon">
-                      <i class="ion-social-buffer"></i>
-                  </div>
-                  <h4>Print Design</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-              </div>
+          <h3 class="block-title">Licencias y certificaciones</h3>
+          <div class="container text-center">
+            <div class="row" *ngFor="let elem of cv.licencias">
+              <div class="col-6 col-sm-6"><b>{{elem.Titulo}}</b></div>
+              <div class="col-6 col-sm-3">{{elem.Expedicion}}</div>
+              <div class="col-6 col-sm-3"><a href="{{elem.Link}}">Ver El Certificado</a></div><br>
+            </div>
           </div>
-      </div>
-     <!--  <div class="block-content">
-          <h3 class="block-title">Awards</h3>
-          <div class="row">
-              <div class="col-md-3 col-sm-6 awards">
-                  <img src="assets\images\awards\1.jpeg" alt="">
-              </div>
-              <div class="col-md-3 col-sm-6 awards">
-                  <img src="assets\images\awards\2.jpeg" alt="">
-              </div>
-              <div class="col-md-3 col-sm-6 awards">
-                  <img src="assets\images\awards\3.jpeg" alt="">
-              </div>
-              <div class="col-md-3 col-sm-6 awards">
-                  <img src="assets\images\awards\4.jpeg" alt="">
-              </div>
-          </div>
-      </div> -->
-      <div class="block-content">
-          <h3 class="block-title">Testimonios</h3>
-          <div class="row">
-              <div id="liontestimonial" class="owl-carousel owl-theme">
-                  <div *ngFor="let testix of cv.testimonio">
-                    <div class="item testimonials">
-                        <img src="assets\images\testimonials\1.jpeg" alt="">
-                        <blockquote>{{ testix.Descripcion }}
-                            <p class="quote"><span>{{ testix.Nombre }}</span> - {{ testix.Cargo }}</p>
-                        </blockquote>
-                    </div>
-                </div>
+        </div>
 
-              </div>
-          </div>
-      </div>
+
       <div class="row text-center">
           <div class="col-md-12 btn-email">
-              <a class="btn lowercase">davisanderson87@gmail.com</a>
+              <a class="btn lowercase">jaouadoukassi1@gmail.com</a>
           </div>
       </div>
   </section>
